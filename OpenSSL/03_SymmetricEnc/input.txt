@@ -1,0 +1,1 @@
+This variable contains the data to encrypt
