@@ -53,7 +53,7 @@ int main() {
 
 	BIGNUM *b=BN_new();
 	// b has to be max p-2 so i use 63 bytes numbers 
-	BN_rand(b,63*8,0,1);
+	BN_rand(b,63,0,1);
 
 	// q^b mod p 
 	BIGNUM *N1 = BN_new();
