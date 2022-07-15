@@ -1,0 +1,10 @@
+Linear PRNG: S_i+1 = aS_i+b mod m
+LFSR: S_i+m = sum(0 -> m-1) of S_i+j * P_j (mod 2)
+Feistel: left part is XOR with result of f(x) and put on the right
+Quad. Res. : r^((p-1)/2) = 1 mod p
+CRT: choose n a caso e dividi in 2 eq e poi sostituisci la coppia alle risposte
+CRTv2: f(a,b) = af(1,0)+bf(0,1)
+EC: x_3 = lambda^2 - x_1 - x_2 | y_3 = -(lambda*x_3+phi) | phi = y_1 - lambda*x_1 | lambda = (y_2 - y_1)/(x_2-x_1) P != Q | lambda = ((3*x_1^2 + a)/(2*y_1)) if P = Q. a comes from "x" param of curve
+RSA: choose p and q, n=pq, phi(n) = (p-1)(q-1), kpub = e such that gcd(e,phi(n)) = 1. Compute kpr = d such taht d*e = 1 mod phi(n). C = M^e mod N, M = C^d mod N.
+DSA: generate p, generate prime divider q of p-1, find element alpha with ord(alpha) = q (alpha^q = 1 mod p). Choose a random integer kpri=d 0<d<q, compute beta = alpha^d mod p. 
+ECDSA: B = d*G. To sign M: choose random K 0<K<n, compute R = k*G = (x_r, y_r) and r=x_r. Compute s = (hash(M)+d*r)*K^-1 (mod n). The sign is (r,s).
