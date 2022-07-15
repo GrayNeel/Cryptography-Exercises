@@ -38,7 +38,7 @@ char *process(char *data, int length, RSA *rsa_priv_key) {
                           rsa_priv_key, RSA_PKCS1_OAEP_PADDING) == -1) 
             return NULL;*/
 	
-	// RSA manual decrypt: m^d mod n 
+	// RSA decrypt: m^d mod n 
 	BIGNUM *m_bn = BN_new();
 	BN_hex2bn(&m_bn, data);
 	BIGNUM *d = rsa->d;
