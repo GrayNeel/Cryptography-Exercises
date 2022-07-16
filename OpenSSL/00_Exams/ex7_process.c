@@ -50,10 +50,7 @@ char *process(char *data, int length, RSA *rsa_priv_key) {
 	}
 	
 	unsigned char *decrypted_data = BN_bn2hex(res);
-			
-	if(strlen(decrypted_data) != length)
-		return NULL;
-			
+						
 	EVP_MD_CTX *md = EVP_MD_CTX_new();
 	
 	EVP_DigestInit(md, EVP_sha256());
